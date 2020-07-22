@@ -36,14 +36,14 @@ https://github.com/tamnil/ubering
 Later, we found the following:
 
 [Uber TLC Foil Response](https://github.com/fivethirtyeight/uber-tlc-foil-response)
-![raw data](/uberRawTripData.PNG)
+![raw data](uberRawTripData.PNG)
 
 This suggested that the provided data are not simply location tracking data from a Uber trip. At this point, we got stuck and tried to search using random keywords. Googling "15 digit hex uber" gave us the following issue:
 
 ![googlesearch](googlesearch.PNG)
 
 [Uber H3 Index Issue](https://github.com/uber/h3/issues/248)
-![issuecontent](/uberh3issue.PNG)
+![issuecontent](uberh3issue.PNG)
 
 With this issue, we were able to identify the source of the log -- Uber's h3 repository. Fortunately, the h3 repository can convert these data into longitudes and latitudes. Thus, we simply built the repository and converted the log using the following script:
 
@@ -58,7 +58,7 @@ with open('longlat.txt','w+') as f:
 
 We then aquired a list of coordinates. Plotting them using [this tool](https://mobisoftinfotech.com/tools/plot-multiple-points-on-map/) gave us:
 
-![flag1](/flag1.PNG)
-![flag2](/flag2.PNG)
+![flag1](flag1.PNG)
+![flag2](flag2.PNG)
 
 Flag: `uiuctf[H3_iZ_very_HEX]`
